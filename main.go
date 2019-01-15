@@ -33,7 +33,7 @@ func main() {
 	var tmpl *template.Template
 	switch *licenseType {
 	case "MIT":
-		tmpl = template.Must(template.ParseFiles("MIT"))
+		tmpl = template.Must(template.ParseFiles("template/MIT"))
 	default:
 		tmpl = nil
 	}
