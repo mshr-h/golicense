@@ -34,17 +34,19 @@ func main() {
 	switch *licenseType {
 	case "MIT":
 		tmpl = template.Must(template.ParseFiles("template/MIT"))
+		err = tmpl.Execute(f, &license)
+	case "GPL-3":
+		tmpl = template.Must(template.ParseFiles("template/GPL-3"))
+		err = tmpl.Execute(f, &license)
+	case "Apache-2":
+		tmpl = template.Must(template.ParseFiles("template/Apache-2"))
+		err = tmpl.Execute(f, &license)
 	default:
-		tmpl = nil
-	}
-
-	if tmpl == nil {
 		fmt.Println("Invalid license type")
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
 
-	err = tmpl.Execute(f, &license)
 	if err != nil {
 		panic(err)
 	}
