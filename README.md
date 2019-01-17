@@ -19,6 +19,8 @@ Invalid license type
     	License type (default "unknown")
 ```
 
+Generate `MIT` LICENSE which author is `mshr-h`.
+
 ```
 $ golicense -author mshr-h -license MIT
 ```
